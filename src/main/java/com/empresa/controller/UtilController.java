@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.empresa.entity.Categoria;
 import com.empresa.entity.Deporte;
 import com.empresa.entity.Ubigeo;
+import com.empresa.service.CategoriaService;
 import com.empresa.service.DeporteService;
 import com.empresa.service.UbigeoService;
 
@@ -31,6 +33,16 @@ public class UtilController {
 	@ResponseBody
 	public ResponseEntity<List<Deporte>> listaAlumno() {
 		List<Deporte> lista = deporteService.listaDeporte();
+		return ResponseEntity.ok(lista);
+	}
+	
+	@Autowired
+	private CategoriaService categoriaService;
+	
+	@GetMapping("/categoria")
+	@ResponseBody
+	public ResponseEntity<List<Categoria>> listaProducto() { // duda de lista producto
+		List<Categoria> lista = categoriaService.listaCategoria();
 		return ResponseEntity.ok(lista);
 	}
 
