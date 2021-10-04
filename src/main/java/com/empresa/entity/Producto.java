@@ -19,6 +19,7 @@ public class Producto {
 	private String nombre;
 	private double precio;
 	private int stock;
+	private String autor;
 	
 	@ManyToOne
 	@JoinColumn(name = "idcategoria")
@@ -78,6 +79,14 @@ public class Producto {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+	
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
 
 	public byte[] getFoto1() {
 		return foto1;
@@ -87,6 +96,8 @@ public class Producto {
 		this.foto1 = foto1;
 	}
 	
+
+
 	
 	
 	
